@@ -11,11 +11,10 @@ import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import {Link} from "react-router-dom";
-import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 
-class Signup extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,33 +36,10 @@ class Signup extends Component {
                     <CssBaseline />
                     <div>
                         <Typography component="h1" variant="h5">
-                            Sign up
+                            Login
                         </Typography>
                         <form  noValidate>
                             <Grid container spacing={2}>
-                                <Grid item xs={12} sm={6}>
-                                    <TextField
-                                        autoComplete="fname"
-                                        name="firstName"
-                                        variant="outlined"
-                                        required
-                                        fullWidth
-                                        id="firstName"
-                                        label="First Name"
-                                        autoFocus
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <TextField
-                                        variant="outlined"
-                                        required
-                                        fullWidth
-                                        id="lastName"
-                                        label="Last Name"
-                                        name="lastName"
-                                        autoComplete="lname"
-                                    />
-                                </Grid>
                                 <Grid item xs={12}>
                                     <TextField
                                         variant="outlined"
@@ -87,7 +63,7 @@ class Signup extends Component {
                                         autoComplete="current-password"
                                     />
                                 </Grid>
-                                <Grid item xs={12}>
+                                <Grid item xs={12} style = {{alignContent : "center"}}>
                                     <Select labelId="label"
                                             id="select"
                                             value={this.state.selectFaculty}
@@ -105,12 +81,12 @@ class Signup extends Component {
                                 color="primary"
                                 style = {buttonStyle}
                             >
-                                Sign Up
+                                LOG IN
                             </Button>
                             <Grid container justify="flex-end">
                                 <Grid item>
-                                    <Link to="/login">
-                                        Already have an account? Sign in
+                                    <Link to="/">
+                                        Didn't have an account? Sign up
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -139,4 +115,4 @@ const containerStyle = {
 const buttonStyle = {
     marginTop : "10px"
 }
-export default Signup;
+export default Login;

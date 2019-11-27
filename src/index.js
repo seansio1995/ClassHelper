@@ -5,12 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Login from "./components/Login";
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import Homepage from './components/Homepage';
+import Limit from './components/Limit';
 
 const routing = (
     <Router>
         <div>
             <Route exact path="/" component={App} />
-            <Route path="/login" component={Login} />
+            <Route path = "/login" component={Login} />
+            <Route path = "/homepage" component = {Homepage} />
+            <Route path = "/limit" component = {Limit}/>
         </div>
     </Router>
 )

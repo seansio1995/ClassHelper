@@ -81,7 +81,9 @@ class Login extends Component {
                                 color="primary"
                                 style = {buttonStyle}
                             >
-                                LOG IN
+                                <Link to = "/homepage">
+                                    LOG IN
+                                </Link>
                             </Button>
                             <Grid container justify="flex-end">
                                 <Grid item>
