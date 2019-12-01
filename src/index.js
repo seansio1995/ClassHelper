@@ -23,6 +23,10 @@ const routing = (
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
             <Route path ="/messageWarning" component = {MessageWarning} />
             <Route path ="/facialWarning" component = {FacialWarning} />
+            <Route path='/twitter' component={() => {
+                window.location.href = 'https://www.twitter.com';
+                return null;
+            }}/>
         </div>
     </Router>
 )
