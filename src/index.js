@@ -9,6 +9,8 @@ import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
+import MessageWarning from "./MessageWarning";
+import FacialWarning from "./FacialWarning";
 
 const routing = (
     <Router>
@@ -19,6 +21,12 @@ const routing = (
             <Route path = "/instructorHomepage" component = {InstructorHomepage} />
             <Route path = "/limit" component = {Limit}/>
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
+            <Route path ="/messageWarning" component = {MessageWarning} />
+            <Route path ="/facialWarning" component = {FacialWarning} />
+            <Route path='/twitter' component={() => {
+                window.location.href = 'https://www.twitter.com';
+                return null;
+            }}/>
         </div>
     </Router>
 )
