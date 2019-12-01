@@ -26,7 +26,7 @@ class Login extends Component {
         if (e.target.value == "student")
             this.setState({homepage : "/studentHomepage"});
         else
-        this.setState({homepage : "/instructorHomepage"});
+            this.setState({homepage : "/instructorHomepage"});
     }
 
     render() {

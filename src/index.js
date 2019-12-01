@@ -8,6 +8,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
+import CourseHomepageStudent from './components/CourseHomepageStudent'
 
 const routing = (
     <Router>
@@ -17,6 +18,7 @@ const routing = (
             <Route path = "/studentHomepage" component = {StudentHomepage} />
             <Route path = "/instructorHomepage" component = {InstructorHomepage} />
             <Route path = "/limit" component = {Limit}/>
+            <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
         </div>
     </Router>
 )
