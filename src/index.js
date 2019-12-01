@@ -11,6 +11,7 @@ import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
 import MessageWarning from "./MessageWarning";
 import FacialWarning from "./FacialWarning";
+import InstructorLimit from './components/InstructorLimit'
 
 const routing = (
     <Router>
@@ -27,6 +28,7 @@ const routing = (
                 window.location.href = 'https://www.twitter.com';
                 return null;
             }}/>
+            <Route path = "/instructorLimit" component = {InstructorLimit}/>
         </div>
     </Router>
 )
