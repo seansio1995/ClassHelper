@@ -34,7 +34,9 @@ class Limit extends Component {
             return (
                 <div style = {pageStyle}>
                     <div style = {headerStyle}>
-                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                        <Link to = "/studentHomepage" style = {linkStyle}>
+                            <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                        </Link>
                     </div>
                     <img src = {process.env.PUBLIC_URL + "lock.jfif"}/>
                     <div>
@@ -42,7 +44,7 @@ class Limit extends Component {
                     </div>
                     <div>
                         <button>
-                            <Link to = "/homepage">
+                            <Link to = "/studentHomepage">
                                 Goto homepage
                             </Link>
                         </button>
@@ -70,7 +72,12 @@ const pageStyle = {
 
 const headerStyle = {
     fontSize : "30px",
-    textAlign : "center"
+    textAlign : "center",
+}
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 const containerStyle = {

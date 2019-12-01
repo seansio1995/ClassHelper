@@ -47,7 +47,7 @@ class InstructorHomepage extends Component {
                             <h2>Name: Jack</h2>
                             <h2>School: CMU</h2>
                             <h2>Department: ECE</h2>
-                            <h2>Role: Student</h2>
+                            <h2>Role: Instructor</h2>
                         </Grid>
                     </Grid>
                     <Grid container xs={9} >
