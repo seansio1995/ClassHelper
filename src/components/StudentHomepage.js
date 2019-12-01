@@ -21,14 +21,31 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import { red } from '@material-ui/core/colors';
+
 
 class StudentHomepage extends Component {
     constructor(props) {
         super(props);
+        this.handleOnblur = this.handleOnblur.bind(this);
 
+    }
+
+    componentDidMount() {
+        window.addEventListener('blur', this.handleOnblur);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('blur', this.handleOnblur)
+    }
+
+    handleOnblur(){
+        alert("Dont leave the page during class")
+        var timeout = 1;
+        setTimeout(() => {
+            this.props.history.push('/limit')
+            
+        },timeout)
     }
 
     render() {
