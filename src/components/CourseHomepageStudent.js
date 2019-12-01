@@ -6,6 +6,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 //import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -13,6 +14,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import {Link} from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import { makeStyles } from '@material-ui/core/styles';
 
 class CourseHomepageStudent extends Component {
     constructor(props) {
@@ -28,10 +30,12 @@ class CourseHomepageStudent extends Component {
                 <Container component="main" maxWidth="xs" style={containerStyle}>
                     <CssBaseline />
                     <div>
-                        <Typography component="h1" variant="h5">
-                            Course Homepage
-                        </Typography>
-                        
+                        <Breadcrumbs aria-label="breadcrumb">
+                        <Link color="inherit" to="/">
+                        Home
+                        </Link>
+                        <Link color="inherit" to="/studentDiscussion" > Discussion </Link>
+                        </Breadcrumbs>            
                     </div>
                 </Container>
             </div>
