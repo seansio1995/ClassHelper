@@ -9,6 +9,8 @@ import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
+import MessageWarning from "./MessageWarning";
+import FacialWarning from "./FacialWarning";
 
 const routing = (
     <Router>

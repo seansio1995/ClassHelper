@@ -26,13 +26,30 @@ import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
 import TwitterIcon from "../twitter.png";
 import FacebookIcon from "../facebook.png";
+import Modal from '@material-ui/core/Modal';
+
 
 
 class StudentHomepage extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            open : false
+        }
     }
+
+    showMessageWarning = () => {
+        this.setState({open : true});
+    }
+
+    handleClose = () => {
+        this.setState({open : false});
+    }
+
+    handleStay = () => {
+        this.setState({open : false})
+    }
+
 
     render() {
         return (
@@ -136,14 +153,48 @@ class StudentHomepage extends Component {
                     </Grid>
                 </Grid>
                 <div style = {distractionStyle} >
-                    <Link to="messageWarning">
-                        <img style = {{marginLeft : '20px'}}  src={TwitterIcon} width={80} />
-                    </Link>
+
+                        <img style = {{marginLeft : '20px'}}  src={TwitterIcon} width={80} onClick={this.showMessageWarning}/>
 
                     <Link to="facialWarning">
                       <img style = {{marginLeft : '20px'}}  src={FacebookIcon} width={80} />
                     </Link>
                 </div>
+
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                >
+                    <div style={modalStyle}>
+                        <h2 id="simple-modal-title">WARNING</h2>
+                        <p id="simple-modal-description">
+                            You are trying to leave the current page and browse another page. Please be aware that you will lose points by doing so.
+                        </p>
+                        <div style = {{display : "inline-flex", marginLeft : "150px"}}>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                style = {{marginRight : "50px"}}
+                                onClick = {this.handleStay}
+                            > Stay </Button>
+
+                            <Link to="messageWarning">
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="secondary"
+                            > Leave </Button>
+                            </Link>
+
+                        </div>
+
+                    </div>
+                </Modal>
             </div>
 
         )
@@ -169,6 +220,15 @@ const buttonStyle = {
 
 const distractionStyle = {
     marginTop : "320px"
+}
+
+const modalStyle = {
+    marginTop : "200px",
+    marginLeft : "30%",
+    height : "200px",
+    width : "600px",
+    backgroundColor : "grey",
+    padding : "20px"
 }
 
 export default StudentHomepage;
