@@ -14,7 +14,7 @@ import {Link} from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
-class Homepage extends Component {
+class StudentHomepage extends Component {
     constructor(props) {
         super(props);
 
@@ -26,7 +26,7 @@ class Homepage extends Component {
                 <div style = {headerStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </div>
-                <h1>This is homepage</h1>
+                <h1>This is student homepage</h1>
             </div>
             
         )
@@ -49,4 +49,4 @@ const containerStyle = {
 const buttonStyle = {
     marginTop : "10px"
 }
-export default Homepage;
+export default StudentHomepage;

@@ -18,12 +18,15 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectFaculty : "student"
+            homepage : "studentHomepage"
         }
     }
 
     handleSelection = (e) => {
-        this.setState({selectFaculty : e.target.value});
+        if (e.target.value == "student")
+            this.setState({homepage : "/studentHomepage"});
+        else
+        this.setState({homepage : "/instructorHomepage"});
     }
 
     render() {
@@ -81,7 +84,7 @@ class Login extends Component {
                                 color="primary"
                                 style = {buttonStyle}
                             >
-                                <Link to = "/homepage">
+                                <Link to = {this.state.homepage}>
                                     LOG IN
                                 </Link>
                             </Button>
