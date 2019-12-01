@@ -9,6 +9,7 @@ import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
+import InstructorLimit from './components/InstructorLimit'
 
 const routing = (
     <Router>
@@ -19,6 +20,7 @@ const routing = (
             <Route path = "/instructorHomepage" component = {InstructorHomepage} />
             <Route path = "/limit" component = {Limit}/>
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
+            <Route path = "/instructorLimit" component = {InstructorLimit}/>
         </div>
     </Router>
 )

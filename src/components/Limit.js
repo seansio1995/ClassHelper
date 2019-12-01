@@ -40,25 +40,35 @@ class Limit extends Component {
                     </div>
                     <img src = {process.env.PUBLIC_URL + "lock.jfif"}/>
                     <div>
-                        <div>Your Browser is Locked by your professor. You can only use discussion board and Quiz during class.</div>
+                        <h2>Your Browser is Locked by your professor. You can only use discussion board and Quiz during class.</h2>
                     </div>
-                    <div>
-                        <button>
-                            <Link to = "/studentHomepage">
-                                Goto homepage
-                            </Link>
-                        </button>
-                        <button>
-                            <Link to = "/discussion">
-                                Goto discussion
-                            </Link>
-                        </button>
-                        <button>
-                            <Link to = "/quiz">
-                                Goto quiz
-                            </Link>
-                        </button>
-                    </div>
+                    <Grid  item xs={18}>
+                        <div style = {buttonStyle}>
+                            <Grid justify="center" container spacing={2}>
+                                <Grid item>
+                                    <Link to = "/studentHomepage">
+                                        <Button variant="contained" color="secondary">  
+                                                Goto homepage
+                                        </Button>
+                                    </Link>
+                                </Grid>
+                                <Grid item>
+                                    <Link to = "/discussion">
+                                        <Button variant="contained" color="secondary">
+                                                Goto discussion
+                                        </Button>
+                                    </Link>
+                                </Grid>
+                                <Grid item>
+                                    <Link to = "/quiz">
+                                        <Button variant="contained" color="primary">
+                                                Goto quiz
+                                        </Button>
+                                    </Link>
+                                </Grid>
+                            </Grid>
+                        </div>
+                    </Grid>
                 </div>
             )
         }
@@ -87,4 +97,5 @@ const containerStyle = {
 const buttonStyle = {
     marginTop : "10px"
 }
+
 export default Limit;
