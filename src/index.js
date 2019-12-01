@@ -19,6 +19,8 @@ const routing = (
             <Route path = "/instructorHomepage" component = {InstructorHomepage} />
             <Route path = "/limit" component = {Limit}/>
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
+            <Route path ="/messageWarning" component = {MessageWarning} />
+            <Route path ="/facialWarning" component = {FacialWarning} />
         </div>
     </Router>
 )

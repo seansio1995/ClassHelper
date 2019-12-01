@@ -24,6 +24,9 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
+import TwitterIcon from "../twitter.png";
+import FacebookIcon from "../facebook.png";
+
 
 class StudentHomepage extends Component {
     constructor(props) {
@@ -132,6 +135,15 @@ class StudentHomepage extends Component {
                         </Card>
                     </Grid>
                 </Grid>
+                <div style = {distractionStyle} >
+                    <Link to="messageWarning">
+                        <img style = {{marginLeft : '20px'}}  src={TwitterIcon} width={80} />
+                    </Link>
+
+                    <Link to="facialWarning">
+                      <img style = {{marginLeft : '20px'}}  src={FacebookIcon} width={80} />
+                    </Link>
+                </div>
             </div>
 
         )
@@ -154,4 +166,9 @@ const containerStyle = {
 const buttonStyle = {
     marginTop : "10px"
 }
+
+const distractionStyle = {
+    marginTop : "320px"
+}
+
 export default StudentHomepage;
