@@ -27,6 +27,10 @@ class Signup extends Component {
         this.setState({selectFaculty : e.target.value});
     }
 
+    navigateToLogin = () => {
+
+    }
+
     render() {
         return (
             <div style = {pageStyle}>
@@ -104,8 +108,9 @@ class Signup extends Component {
                                 variant="contained"
                                 color="primary"
                                 style = {buttonStyle}
+                                onClick={this.navigateToLogin}
                             >
-                                Sign Up
+                                <Link to="/login">Sign up</Link>
                             </Button>
                             <Grid container justify="flex-end">
                                 <Grid item>
