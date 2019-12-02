@@ -37,6 +37,7 @@ const routing = (
             <Route path = "/studentquiz" component = {StudentQuiz}/>
             <Route path = "/instructorquiz" component = {InstructorQuiz}/>
             <Route path = "/createquiz" component = {CreateQuiz}/>
+            <Route path = "/rankboard" component = {RankBoard}/>
         </div>
     </Router>
 )
