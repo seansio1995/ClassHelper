@@ -55,11 +55,10 @@ class StudentHomepage extends Component {
     }
 
     handleOnblur(){
-        alert("Dont leave the page during class")
-        var timeout = 1;
+        // alert("Dont leave the page during class")
+        var timeout = 1000;
         setTimeout(() => {
             this.props.history.push('/limit')
-            
         },timeout)
     }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Redirect} from "react-router";
-
+import { Link } from "react-router-dom";
 
 class MessageWarning extends Component {
     constructor(props) {
@@ -22,7 +22,9 @@ class MessageWarning extends Component {
         return(
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/studentHomepage" style = {linkStyle}>
+                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
                 {  this.state.redirect
                     ? <Redirect to="twitter" />
@@ -40,6 +42,11 @@ const pageStyle = {
 const headerStyle = {
     fontSize : "30px",
     textAlign : "center"
+}
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 export default MessageWarning;
