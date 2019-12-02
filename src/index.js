@@ -16,6 +16,7 @@ import InstructorLimit from './components/InstructorLimit'
 import StudentQuiz from "./StudentQuiz";
 import InstructorQuiz from "./components/InstructorQuiz";
 import CreateQuiz from "./components/CreateQuiz";
+import RankBoard from "./components/RankBoard";
 
 const routing = (
     <Router>
@@ -37,6 +38,7 @@ const routing = (
             <Route path = "/studentquiz" component = {StudentQuiz}/>
             <Route path = "/instructorquiz" component = {InstructorQuiz}/>
             <Route path = "/createquiz" component = {CreateQuiz}/>
+            <Route path = "/rankboard" component = {RankBoard}/>
         </div>
     </Router>
 )

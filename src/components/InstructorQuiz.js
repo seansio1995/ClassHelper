@@ -24,7 +24,7 @@ class InstructorQuiz extends Component {
 
                 </div>
                 <div style = {{textAlign :"center", fontSize : "30px", margin:"0 auto", border: '3px solid blue', width : "600px", height : "150px"}}>
-                    <div style = {{marginTop : "50px"}}>Check Performance</div>
+                    <div style = {{marginTop : "50px"}}><Link to="rankboard">Check Performance</Link></div>
                 </div>
             </div>
         )

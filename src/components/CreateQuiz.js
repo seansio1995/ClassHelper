@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import FormControl from '@material-ui/core/FormControl';
 import Box from "@material-ui/core/Box";
 import { v4 } from 'uuid'
+import {Link} from "react-router-dom";
 
 class CreateQuiz extends Component {
     constructor(props) {
@@ -84,6 +85,25 @@ class CreateQuiz extends Component {
 
                 <div style={{marginLeft : "30%"}} >
                     {answerItems}
+                </div>
+
+                <div style={{marginTop : "40px"}}>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        style={{marginRight : "30px"}}
+                    >
+                        <Link to="instructorquiz"> Submit </Link>
+                    </Button>
+
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="secondary"
+                    >
+                        <Link to="instructorquiz"> Cancel </Link>
+                    </Button>
                 </div>
             </div>
         )
