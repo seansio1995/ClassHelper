@@ -25,7 +25,6 @@ import SwipeableViews from 'react-swipeable-views';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
     return (
         <Typography
             component="div"

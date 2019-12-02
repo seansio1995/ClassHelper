@@ -3,6 +3,7 @@ import Webcam from "react-webcam";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Box from '@material-ui/core/Box';
+import { Link } from "react-router-dom";
 
 class FacialWarning extends Component {
     constructor(props) {
@@ -13,7 +14,9 @@ class FacialWarning extends Component {
         return(
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/studentHomepage" style = {linkStyle}>
+                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
 
                 <h2 style = {{color:"red"}}>You Are Not Paying Attention</h2>
@@ -74,5 +77,10 @@ const defaultProps = {
     border: 1,
     style: { width: '15rem', height: '20rem'},
 };
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
+}
 
 export default FacialWarning;
