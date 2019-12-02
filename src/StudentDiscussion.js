@@ -212,7 +212,7 @@ const paperStyle = {
 
 const discussionStyle = {
 	textAlign : "left",
-	backgroundColor: "lightGrey",
+	backgroundColor: "#f5f5f5",
 	marginBottom: "5px",
 	marginLeft: "10px"
 }
