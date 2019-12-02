@@ -64,7 +64,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function FullWidthTabs() {
+export default function FullWidthTabsSurvey() {
     const classes = useStyles();
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
@@ -77,10 +77,14 @@ export default function FullWidthTabs() {
         setValue(index);
     };
 
+    const handleChatting = event => {
+        setValue(1);
+    }
+
     return (
         <div style={pageStyle}>
             <div style={headerStyle}>
-                <Link to = "/studentHomepage" style = {linkStyle}>
+                <Link to="/studentHomepage" style={linkStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </Link>
             </div>
@@ -108,48 +112,143 @@ export default function FullWidthTabs() {
                         onChangeIndex={handleChangeIndex}
                     >
                         <TabPanel value={value} index={0} dir={theme.direction}>
+                            <div style={headerStyle}>
+                                <h2>Introduction</h2>
+                            </div>
                             <Paper className={classes.root} width={1000}>
-                                <h1 align="left">18XXX: Introduction to Software Engineering</h1>
-                                <h1 align="left">Instructor: Mary</h1>
-                                <h1 align="left">Teaching Assistants: Kevin, Stan</h1>
-                                <h1 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h1>
-                                <h1 align="left">Room: 1027, Building 23</h1>
-                                <h1 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h1>
-                                <h1 align="left">Plan: See this link demo.html/page2/section3</h1>
+                                <h2 align="left">18XXX: Introduction to Software Engineering</h2>
+                                <h2 align="left">Instructor: Mary</h2>
+                                <h2 align="left">Teaching Assistants: Kevin, Stan</h2>
+                                <h2 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h2>
+                                <h2 align="left">Room: 1027, Building 23</h2>
+                                <h2 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h2>
+                                <h2 align="left">Plan: See this link demo.html/page2/section3</h2>
                             </Paper>
                         </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
-                            <StudentDiscussion/>
+                            <StudentDiscussion />
                         </TabPanel>
                         <TabPanel value={value} index={2} dir={theme.direction}>
-                            <h1 align="left">Team Formation for 18XXX: Introduction to Software Engineering</h1>
-                            <h1 align="left">Your Team:</h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team3 : Lebron, Kevin, Ben <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team10: Adam, Devin, Mark <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team11: Dan, Kathy, Anthony <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button size="large"><Link to="/studentHomepage">New Team</Link></button></h1>
+                            <div style={headerStyle}>
+                                <h2>Team</h2>
+                            </div>
+                            <h2 align="left">Your Team:</h2>
+                            <Grid container spacing={3}>
+                                <Grid sm={6}>
+                                    <h3 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team3 : Lebron, Kevin, Ben </h3>
+
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                        onClick={handleChatting}
+                                    >
+                                        Discussion
+                            </Button>
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                    >
+                                        Leave
+                            </Button> </Grid>
+                                <Grid sm={6}>
+                                    <h3 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team6 : Anna, Deron, Prince </h3>
+
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                        onClick={handleChatting}
+                                    >
+                                        Discussion
+                            </Button>
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                    >
+                                        Leave
+                            </Button> </Grid>
+                                <Grid sm={6}>
+                                    <h3 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team7 : Kerr, Micheal, Jane </h3>
+
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                        onClick={handleChatting}
+                                    >
+                                        Discussion
+                            </Button>
+                                </Grid>
+                                <Grid sm={3}>
+                                    <Button
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        style={buttonStyle}
+                                    >
+                                        Leave
+                            </Button>
+                                </Grid>
+                                    <Grid sm="9">
+                                        <h2 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h2>
+                                    </Grid>
+                                    <Grid sm="3">
+                                        <Button
+                                            fullWidth
+                                            variant="contained"
+                                            color="primary"
+                                            style={buttonStyle}
+                                        >
+                                            <Link to="/CourseHomepageStudentSurvey">New Team</Link>
+                                        </Button>
+                                    </Grid>
+                                </Grid>
                         </TabPanel>
-                        <TabPanel value={value} index={3} dir={theme.direction}>
-                            <StudentQuiz/>
-          </TabPanel>
+                            <TabPanel value={value} index={3} dir={theme.direction}>
+                                <StudentQuiz />
+                            </TabPanel>
                     </SwipeableViews>
                 </div>
             </Grid>
         </div>
-    );
-}
-
+            );
+        }
+        
+const buttonStyle = {
+                marginTop : "10px",
+            width: "60%",
+            align : "right"
+        }
+        
 const pageStyle = {
-    textAlign: "center"
-}
-
+                textAlign: "center"
+        }
+        
 const headerStyle = {
-    fontSize: "30px",
-    textAlign: "center"
-}
-
+                fontSize: "30px",
+            textAlign: "center"
+        }
+        
 const linkStyle = {
-    textDecoration: 'none',
-    color : "#000000"
-}
-//export default CourseHomepageStudent;
+                textDecoration: 'none',
+            color : "#000000"
+        }
+        //export default CourseHomepageStudent;
