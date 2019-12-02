@@ -15,6 +15,7 @@ import {Link} from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 class CourseHomepageStudent extends Component {
     constructor(props) {
@@ -27,17 +28,19 @@ class CourseHomepageStudent extends Component {
                 <div style = {headerStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </div>
-                <Container component="main" maxWidth="xs" style={containerStyle}>
-                    <CssBaseline />
+                   <Paper style={paperStyle}>
+                
                     <div>
                         <Breadcrumbs aria-label="breadcrumb">
-                        <Link color="inherit" to="/">
+                        <Link color="inherit" to="/CourseHomepageStudent">
                         Home
                         </Link>
                         <Link color="inherit" to="/studentDiscussion" > Discussion </Link>
                         </Breadcrumbs>            
                     </div>
-                </Container>
+                </Paper>
+
+                
             </div>
 
         )
@@ -59,5 +62,15 @@ const containerStyle = {
 
 const buttonStyle = {
     marginTop : "10px"
+}
+
+const paperStyle = {
+    marginLeft : "15%",
+    marginRight : "15%",
+    height : "500px",
+    borderColor : "grey",
+    padding : "20px",
+    borderWidth: "thick"
+
 }
 export default CourseHomepageStudent;
