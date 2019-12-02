@@ -24,6 +24,7 @@ import SwipeableViews from 'react-swipeable-views';
 import Button from '@material-ui/core/Button';
 import StudentQuiz from "../StudentQuiz";
 import StudentDiscussion from "../StudentDiscussion";
+import InstructorQuiz from "./InstructorQuiz";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -85,7 +86,7 @@ export default function FullWidthTabs() {
                 </Link>
             </div>
             <Grid container spacing={3} justify="center"
-                alignItems="center">
+                  alignItems="center">
                 <div className={classes.root}>
                     <AppBar position="static" color="default">
                         <Tabs
@@ -130,8 +131,8 @@ export default function FullWidthTabs() {
                             <h1 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button size="large"><Link to="/studentHomepage">New Team</Link></button></h1>
                         </TabPanel>
                         <TabPanel value={value} index={3} dir={theme.direction}>
-                            <StudentQuiz/>
-          </TabPanel>
+                            <InstructorQuiz/>
+                        </TabPanel>
                     </SwipeableViews>
                 </div>
             </Grid>
@@ -152,4 +153,3 @@ const linkStyle = {
     textDecoration: 'none',
     color : "#000000"
 }
-//export default CourseHomepageStudent;

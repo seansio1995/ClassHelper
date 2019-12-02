@@ -15,6 +15,10 @@ import MessageWarning from "./MessageWarning";
 import FacialWarning from "./FacialWarning";
 import InstructorLimit from './components/InstructorLimit'
 import StudentQuiz from "./StudentQuiz";
+import InstructorQuiz from "./components/InstructorQuiz";
+import CreateQuiz from "./components/CreateQuiz";
+import RankBoard from "./components/RankBoard";
+import InstructorCourseHomepage from "./components/InstructorCourseHomepage";
 
 const routing = (
     <Router>
@@ -23,6 +27,7 @@ const routing = (
             <Route path = "/login" component={Login} />
             <Route path = "/studentHomepage" component = {StudentHomepage} />
             <Route path = "/instructorHomepage" component = {InstructorHomepage} />
+            <Route path = "/InstructorCourseHomepage" component = {InstructorCourseHomepage} />
             <Route path = "/limit" component = {Limit}/>
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
             <Route path = "/StudentDiscussion" component = {StudentDiscussion} />
@@ -35,6 +40,9 @@ const routing = (
             }}/>
             <Route path = "/instructorLimit" component = {InstructorLimit}/>
             <Route path = "/studentquiz" component = {StudentQuiz}/>
+            <Route path = "/instructorquiz" component = {InstructorQuiz}/>
+            <Route path = "/createquiz" component = {CreateQuiz}/>
+            <Route path = "/rankboard" component = {RankBoard}/>
         </div>
     </Router>
 )
