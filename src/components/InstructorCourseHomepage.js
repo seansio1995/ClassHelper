@@ -126,11 +126,11 @@ export default function FullWidthTabs() {
                         </TabPanel>
                         <TabPanel value={value} index={2} dir={theme.direction}>
                             <h1 align="left">Team Formation for 18XXX: Introduction to Software Engineering</h1>
-                            <h1 align="left">Your Team:</h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team3 : Lebron, Kevin, Ben <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team10: Adam, Devin, Mark <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team11: Dan, Kathy, Anthony <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button size="large"><Link to="/studentHomepage">New Team</Link></button></h1>
+                            <h1 align="left">All Teams:</h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team1: Lebron, Kevin, Ben </h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team2: Adam, Devin, Mark </h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team3: Dan, Kathy, Anthony </h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team4: Kevin, Lam, Devin </h1>
                         </TabPanel>
                         <TabPanel value={value} index={3} dir={theme.direction}>
                             <InstructorQuiz/>
