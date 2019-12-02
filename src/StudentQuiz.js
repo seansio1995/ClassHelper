@@ -20,13 +20,13 @@ class StudentQuiz extends Component {
     handleChoice = (choice) => {
         switch (choice) {
             case "first":
-                this.setState({firstColor : "secondary"});
+                this.setState({firstColor : "secondary", secondColor : "primary", thirdColor : "primary"});
                 break;
             case "second":
-                this.setState({secondColor : "secondary"});
+                this.setState({firstColor: "primary", secondColor : "secondary", thirdColor : "primary"});
                 break;
             case "third":
-                this.setState({thirdColor : "secondary"});
+                this.setState({firstColor: "primary", secondColor:"primary", thirdColor : "secondary"});
                 break;
         }
 
