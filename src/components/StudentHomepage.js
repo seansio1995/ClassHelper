@@ -21,7 +21,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
 import TwitterIcon from "../twitter.png";
@@ -36,6 +35,7 @@ class StudentHomepage extends Component {
         this.state = {
             open : false
         }
+        this.handleOnblur = this.handleOnblur.bind(this);
     }
 
     showMessageWarning = () => {
@@ -44,6 +44,22 @@ class StudentHomepage extends Component {
 
     handleClose = () => {
         this.setState({open : false});
+    }
+
+    componentDidMount() {
+        window.addEventListener('blur', this.handleOnblur);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('blur', this.handleOnblur)
+    }
+
+    handleOnblur(){
+        // alert("Dont leave the page during class")
+        var timeout = 1000;
+        setTimeout(() => {
+            this.props.history.push('/limit')
+        },timeout)
     }
 
     handleStay = () => {

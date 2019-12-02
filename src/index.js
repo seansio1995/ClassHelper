@@ -9,9 +9,11 @@ import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
-import StudentDiscussion from './components/StudentDiscussion'
+import StudentDiscussion from './StudentDiscussion'
 import MessageWarning from "./MessageWarning";
 import FacialWarning from "./FacialWarning";
+import InstructorLimit from './components/InstructorLimit'
+import StudentQuiz from "./StudentQuiz";
 
 const routing = (
     <Router>
@@ -29,6 +31,8 @@ const routing = (
                 window.location.href = 'https://www.twitter.com';
                 return null;
             }}/>
+            <Route path = "/instructorLimit" component = {InstructorLimit}/>
+            <Route path = "/studentquiz" component = {StudentQuiz}/>
         </div>
     </Router>
 )

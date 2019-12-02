@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import "./Style/Signup.scss";
+import "./components/Style/Signup.scss";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 //import Col from "@material-ui/core/Col"
@@ -18,7 +18,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import { Link } from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
-import Student from "../student.png";
+import Student from "./student.png";
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -26,8 +26,6 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import { red } from '@material-ui/core/colors';
-import TwitterIcon from "../twitter.png";
-import FacebookIcon from "../facebook.png";
 import Modal from '@material-ui/core/Modal';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import {ThumbDown, ThumbUp} from '@material-ui/icons';
@@ -146,26 +144,15 @@ class StudentDiscussion extends Component {
   		}
 
         return (
-            <div style={pageStyle}>
+                <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
-                </div>
-                <Paper style={paperStyle}>
-  				
-                    <div>
-                        <Breadcrumbs aria-label="breadcrumb">
-                        <Link color="inherit" to="/CourseHomepageStudent">
-                        Home
-                        </Link>
-                        <Link color="inherit" to="/studentDiscussion" > Discussion </Link>
-                        </Breadcrumbs>            
-                    </div>
                     <h2>Discussion</h2>
+                    </div>
                     <Grid container spacing={3}>
                     	{discussionMessage}
                     </Grid>
 
-                    <form fullWidth style={discussionInputStyle}>
+                    <form fullWidth>
   						<InputLabel style={{"text-align": "left", marginTop : "30px"}}>What do you think?</InputLabel>
   						<OutlinedInput fullWidth multiline value={this.state.newMessage["content"]} onChange={this.newDiscussChange}/>
   						<Button
@@ -178,44 +165,7 @@ class StudentDiscussion extends Component {
                             Submit
                             </Button>
 					</form>
-				</Paper>
-
-
-                <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                >
-                    <div style={modalStyle}>
-                        <h2 id="simple-modal-title">WARNING</h2>
-                        <p id="simple-modal-description">
-                            You are trying to leave the current page and browse another page. Please be aware that you will lose points by doing so.
-                        </p>
-                        <div style = {{display : "inline-flex", marginLeft : "150px"}}>
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                style = {{marginRight : "50px"}}
-                                onClick = {this.handleStay}
-                            > Stay </Button>
-
-                            <Link to="messageWarning">
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="secondary"
-                            > Leave </Button>
-                            </Link>
-
-                        </div>
-
                     </div>
-                </Modal>
-            </div>
 
         )
     }
@@ -269,8 +219,9 @@ const discussionStyle = {
 	marginLeft: "10px"
 }
 
-const discussionInputStyle = {
-
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 export default StudentDiscussion;
