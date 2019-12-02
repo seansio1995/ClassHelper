@@ -8,7 +8,12 @@ class StudentQuiz extends Component {
         this.state = {
             firstColor : "primary",
             secondColor : "primary",
-            thirdColor : "primary"
+            thirdColor : "primary",
+            correctAnswer : "first",
+            correct : null,
+            rankShow : false,
+            correctMessage : "",
+            correctMessageColor : ""
         }
     }
 
@@ -24,6 +29,22 @@ class StudentQuiz extends Component {
                 this.setState({thirdColor : "secondary"});
                 break;
         }
+
+        if (choice === this.state.correctAnswer) {
+            this.setState({
+                correctMessage : "Correct!",
+                correctMessageColor : "green"
+            })
+        } else {
+            this.setState({
+                correctMessage : "Oops! You are close...",
+                correctMessageColor : "red"
+            })
+        }
+
+        this.setState({
+            rankShow : true
+        });
     }
 
     render() {
@@ -64,6 +85,22 @@ class StudentQuiz extends Component {
                         onClick = {() => this.handleChoice("third")}
                     > Feature </Button>
                 </div>
+
+                {
+                    this.state.rankShow && <div>
+                        <div style={ { color: `${ this.state.correctMessageColor }` } }>
+                           <h1>{this.state.correctMessage}</h1>
+                        </div>
+                        <div style = {{textAlign : "left", marginLeft : "40%"}}>
+                            <h3>You currently have <span style={{color:"red"}}>986</span> points</h3>
+                            <p>The Rank Board:</p>
+                            <p>1. Eric the Flash: 1456 points</p>
+                            <p>2. Garry Botter: 1332 points</p>
+                            <p>3. You know my name: 1100 points</p>
+                        </div>
+                    </div>
+                }
+
             </div>
         )
     }
