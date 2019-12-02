@@ -10,7 +10,9 @@ class InstructorQuiz extends Component {
         return (
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/instructorHomepage" style = {linkStyle}>
+                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
                 <h3>Quiz For 18658</h3>
 
@@ -36,6 +38,11 @@ const pageStyle = {
 const headerStyle = {
     fontSize : "30px",
     textAlign : "center"
+}
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 export default InstructorQuiz;

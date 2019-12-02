@@ -80,7 +80,9 @@ export default function FullWidthTabs() {
     return (
         <div style={pageStyle}>
             <div style={headerStyle}>
-                <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                <Link to = "/studentHomepage" style = {linkStyle}>
+                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                </Link>
             </div>
             <Grid container spacing={3} justify="center"
                 alignItems="center">
@@ -146,21 +148,8 @@ const headerStyle = {
     textAlign: "center"
 }
 
-const containerStyle = {
-    marginTop: "10%"
-}
-
-const buttonStyle = {
-    marginTop: "10px"
-}
-
-const paperStyle = {
-    marginLeft: "15%",
-    marginRight: "15%",
-    height: "500px",
-    borderColor: "grey",
-    padding: "20px",
-    borderWidth: "thick"
-
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 //export default CourseHomepageStudent;

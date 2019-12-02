@@ -71,7 +71,9 @@ class StudentHomepage extends Component {
         return (
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/studentHomepage" style = {linkStyle}>
+                            <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
                 <Grid container spacing={3}>
                     <Grid item xs={3} >
@@ -245,6 +247,11 @@ const modalStyle = {
     width : "600px",
     backgroundColor : "grey",
     padding : "20px"
+}
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 export default StudentHomepage;
