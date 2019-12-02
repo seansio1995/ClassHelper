@@ -22,6 +22,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
+import StudentQuiz from "../StudentQuiz";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -118,7 +119,7 @@ export default function FullWidthTabs() {
                             Item Three
           </TabPanel>
                         <TabPanel value={value} index={3} dir={theme.direction}>
-                            Item Four
+                            <StudentQuiz/>
           </TabPanel>
                     </SwipeableViews>
                 </div>

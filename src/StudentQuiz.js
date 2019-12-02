@@ -52,9 +52,7 @@ class StudentQuiz extends Component {
         return (
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <Link to = "/studentHomepage" style = {linkStyle}>
-                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
-                    </Link>
+                    <h2>Quiz Time</h2>
                 </div>
 
                 <div style = {{margin:"0 auto", border: '3px solid blue', width : "600px", height : "150px"}}>
