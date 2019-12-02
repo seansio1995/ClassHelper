@@ -10,6 +10,7 @@ import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
 import CourseHomepageStudent from './components/CourseHomepageStudent'
 import StudentDiscussion from './StudentDiscussion'
+import InstructorDiscussion from './InstructorDiscussion'
 import MessageWarning from "./MessageWarning";
 import FacialWarning from "./FacialWarning";
 import InstructorLimit from './components/InstructorLimit'
@@ -30,6 +31,7 @@ const routing = (
             <Route path = "/limit" component = {Limit}/>
             <Route path = "/CourseHomepageStudent" component = {CourseHomepageStudent} />
             <Route path = "/StudentDiscussion" component = {StudentDiscussion} />
+            <Route path = "/InstructorDiscussion" component = {InstructorDiscussion} />
             <Route path ="/messageWarning" component = {MessageWarning} />
             <Route path ="/facialWarning" component = {FacialWarning} />
             <Route path='/twitter' component={() => {
