@@ -9,7 +9,6 @@ import TextField from "@material-ui/core/TextField";
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 //import Link from "@material-ui/core/Link";
-import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Link } from "react-router-dom";
@@ -22,6 +21,7 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
+import Button from '@material-ui/core/Button';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -56,6 +56,9 @@ const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 1000,
+        '& > *': {
+            margin: theme.spacing(1),
+        },
     },
 }));
 
@@ -101,22 +104,27 @@ export default function FullWidthTabs() {
                         onChangeIndex={handleChangeIndex}
                     >
                         <TabPanel value={value} index={0} dir={theme.direction}>
-                        <Paper className={classes.root} width={1000}>
-                            <h1 align="left">18XXX: Introduction to Software Engineering</h1>
-                            <h1 align="left">Instructor: Mary</h1>
-                            <h1 align="left">Teaching Assistants: Kevin, Stan</h1>
-                            <h1 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h1>
-                            <h1 align="left">Room: 1027, Building 23</h1>
-                            <h1 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h1>
-                            <h1 align="left">Plan: See this link demo.html/page2/section3</h1>
+                            <Paper className={classes.root} width={1000}>
+                                <h1 align="left">18XXX: Introduction to Software Engineering</h1>
+                                <h1 align="left">Instructor: Mary</h1>
+                                <h1 align="left">Teaching Assistants: Kevin, Stan</h1>
+                                <h1 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h1>
+                                <h1 align="left">Room: 1027, Building 23</h1>
+                                <h1 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h1>
+                                <h1 align="left">Plan: See this link demo.html/page2/section3</h1>
                             </Paper>
-          </TabPanel>
+                        </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
                             Item Twotestets
           </TabPanel>
                         <TabPanel value={value} index={2} dir={theme.direction}>
-                            Item Three
-          </TabPanel>
+                            <h1 align="left">Team Formation for 18XXX: Introduction to Software Engineering</h1>
+                            <h1 align="left">Your Team:</h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team3 : Lebron, Kevin, Ben <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team10: Adam, Devin, Mark <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
+                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team11: Dan, Kathy, Anthony <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
+                            <h1 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button size="large"><Link to="/studentHomepage">New Team</Link></button></h1>
+                        </TabPanel>
                         <TabPanel value={value} index={3} dir={theme.direction}>
                             Item Four
           </TabPanel>
