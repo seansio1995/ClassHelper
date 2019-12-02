@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 class StudentQuiz extends Component {
     constructor(props) {
@@ -51,7 +52,9 @@ class StudentQuiz extends Component {
         return (
             <div style={pageStyle}>
                 <div style={headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/studentHomepage" style = {linkStyle}>
+                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
 
                 <div style = {{margin:"0 auto", border: '3px solid blue', width : "600px", height : "150px"}}>
@@ -115,4 +118,10 @@ const headerStyle = {
     fontSize : "30px",
     textAlign : "center"
 }
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
+}
+
 export default StudentQuiz;

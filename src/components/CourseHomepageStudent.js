@@ -26,7 +26,9 @@ class CourseHomepageStudent extends Component {
         return (
             <div style = {pageStyle}>
                 <div style = {headerStyle}>
-                    <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    <Link to = "/studentHomepage" style = {linkStyle}>
+                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                    </Link>
                 </div>
                    <Paper style={paperStyle}>
                 
@@ -73,4 +75,10 @@ const paperStyle = {
     borderWidth: "thick"
 
 }
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
+}
+
 export default CourseHomepageStudent;

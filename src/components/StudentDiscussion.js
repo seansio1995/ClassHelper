@@ -53,9 +53,9 @@ class StudentDiscussion extends Component {
 
         return (
             <div style={pageStyle}>
-                <div style={headerStyle}>
+                <Link to = "/studentHomepage" style = {linkStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
-                </div>
+                </Link>
                 <Paper style={paperStyle}>
   				
                     <div>
@@ -151,6 +151,11 @@ const paperStyle = {
     padding : "20px",
     borderWidth: "thick"
 
+}
+
+const linkStyle = {
+    textDecoration: 'none',
+    color : "#000000"
 }
 
 export default StudentDiscussion;
