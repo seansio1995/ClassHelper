@@ -16,6 +16,7 @@ import InstructorLimit from './components/InstructorLimit'
 import StudentQuiz from "./StudentQuiz";
 import InstructorQuiz from "./components/InstructorQuiz";
 import CreateQuiz from "./components/CreateQuiz";
+import RankBoard from "./components/RankBoard";
 
 const routing = (
     <Router>
