@@ -34,9 +34,7 @@ class Limit extends Component {
             return (
                 <div style = {pageStyle}>
                     <div style = {headerStyle}>
-                        <Link to = "/studentHomepage" style = {linkStyle}>
-                            <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
-                        </Link>
+
                     </div>
                     <img src = {process.env.PUBLIC_URL + "lock.jfif"}/>
                     <div>
@@ -53,14 +51,14 @@ class Limit extends Component {
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link to = "/discussion">
+                                    <Link to = "/StudentDiscussion">
                                         <Button variant="contained" color="secondary">
                                                 Goto discussion
                                         </Button>
                                     </Link>
                                 </Grid>
                                 <Grid item>
-                                    <Link to = "/quiz">
+                                    <Link to = "/studentquiz">
                                         <Button variant="contained" color="primary">
                                                 Goto quiz
                                         </Button>
