@@ -82,7 +82,7 @@ export default function FullWidthTabs() {
     return (
         <div style={pageStyle}>
             <div style={headerStyle}>
-                <Link to = "/studentHomepage" style = {linkStyle}>
+                <Link to = "/instructorHomepage" style = {linkStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </Link>
             </div>
