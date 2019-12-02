@@ -14,6 +14,8 @@ import MessageWarning from "./MessageWarning";
 import FacialWarning from "./FacialWarning";
 import InstructorLimit from './components/InstructorLimit'
 import StudentQuiz from "./StudentQuiz";
+import InstructorQuiz from "./components/InstructorQuiz";
+import CreateQuiz from "./components/CreateQuiz";
 
 const routing = (
     <Router>
@@ -33,6 +35,8 @@ const routing = (
             }}/>
             <Route path = "/instructorLimit" component = {InstructorLimit}/>
             <Route path = "/studentquiz" component = {StudentQuiz}/>
+            <Route path = "/instructorquiz" component = {InstructorQuiz}/>
+            <Route path = "/createquiz" component = {CreateQuiz}/>
         </div>
     </Router>
 )
