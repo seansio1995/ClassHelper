@@ -186,7 +186,7 @@ export default function FullWidthTabs() {
                             variant="contained"
                             color="primary"
                             style={buttonStyle}
-                            href="./courseHomepageStudent"
+                            href="./CourseHomepageStudent"
                         >
                             Submit
                             </Button>
