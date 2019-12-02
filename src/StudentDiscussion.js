@@ -145,9 +145,7 @@ class StudentDiscussion extends Component {
 
         return (
                 <div style={pageStyle}>
-                <div style={headerStyle}>
-                    <h2>Discussion</h2>
-                    </div>
+                    <h1>Discussion</h1>
                     <Grid container spacing={3}>
                     	{discussionMessage}
                     </Grid>
