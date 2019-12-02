@@ -8,9 +8,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Paper from '@material-ui/core/Paper';
-import TextField from "@material-ui/core/TextField";
-import InputLabel from "@material-ui/core/InputLabel";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 //import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -19,10 +16,6 @@ import { Link } from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Student from "./student.png";
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -32,6 +25,8 @@ import Modal from '@material-ui/core/Modal';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import {ThumbDown, ThumbUp} from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
+import { emphasize, withStyles } from '@material-ui/core/styles';
+import Chip from '@material-ui/core/Chip';
 
 class InstructorDiscussion extends Component {
     constructor(props) {
@@ -84,13 +79,13 @@ class InstructorDiscussion extends Component {
                 "11/25/2019": [
                     {
                         id : "discuss1",
-                        content : "Haoze Zhang: Something posted on 11/25/2019.",
+                        content : "Jiarui Gao: Something posted on 11/25/2019.",
                         up : 5,
                         down : 1
                     },
                     {
                         id : "discuss2",
-                        content : "Yi Zhu: Something more posted on 11/25/2019.",
+                        content : "Zihan Ban: Something more posted on 11/25/2019.",
                         up : 3,
                         down : 0
                     }]
@@ -99,7 +94,7 @@ class InstructorDiscussion extends Component {
                 "11/21/2019": [
                     {
                         id : "discuss1",
-                        content : "Haoze Zhang: Something posted on 11/21/2019.",
+                        content : "Chufan Xiao: Something posted on 11/21/2019.",
                         up : 5,
                         down : 1
                     },
@@ -138,13 +133,22 @@ class InstructorDiscussion extends Component {
         this.setState({dateSelected : "now"});
     }
 
-    handleClickHistoryDiscussion = (e) => {
-        if(e.target.id === "history") {
+    handleClickHistoryDiscussion = (date) => {
+        if(date === "history") {
             this.setState({dateSelected : "11/29/2019"});
         } else {
-            this.setState({dateSelected : e.target.id});
+            this.setState({dateSelected : date});
         }
     }
+
+    saveHistory = (e) => {
+        let history = this.state.history;
+        let newDayMessage = {"01/12/2019" : this.state.discuss};
+        history.unshift(newDayMessage);
+        this.setState({history : history, discuss: []});
+    }
+
+
 
     render() {
 
@@ -152,6 +156,7 @@ class InstructorDiscussion extends Component {
         const historyDiscussionMessage = []
         let discussionMessage = []
         let historyDates = []
+        let classOverButton = []
 
   		for (let key in this.state.discuss) {
   			let dict = this.state.discuss[key];
@@ -165,12 +170,23 @@ class InstructorDiscussion extends Component {
 
         if (this.state.dateSelected === "now") {
             discussionMessage = currentDiscussionMessage;
+            classOverButton.push(<form fullWidth>
+                        <Button
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                style = {buttonStyle}
+                                onClick={this.saveHistory}
+                            >
+                            Class is over.
+                            </Button>
+                    </form>);
         } else {
             let dates = []
             for (let entry in this.state.history) {
                 let dicth = this.state.history[entry];
                 let date = Object.keys(dicth)[0];
-                dates.push(<Link color="inherit" id={date} onClick={this.handleClickHistoryDiscussion}>{date}</Link>);
+                dates.push(<StyledBreadcrumb color="inherit" id={date} onClick={ (e) => this.handleClickHistoryDiscussion(date) } label={date} />);
             }
             historyDates.push(<Breadcrumbs aria-label='breadcrumb' style={{'margin-bottom': '20px'}}>{dates}</Breadcrumbs>);
             for (let entry in this.state.history) {
@@ -196,29 +212,15 @@ class InstructorDiscussion extends Component {
                 <div style={pageStyle}>
                 <h1>Discussion</h1>
                 <Breadcrumbs aria-label="breadcrumb" style={{"margin-bottom": "20px"}}>
-                  <Link color="inherit" onClick={this.handleClickCurrentDiscussion}>
-                    Current Discussion
-                  </Link>
-                  <Link color="inherit" id = "history" onClick={this.handleClickHistoryDiscussion}>
-                    History
-                  </Link>
+                  <StyledBreadcrumb color="inherit" id = "current" label="Current Discussion" onClick={this.handleClickCurrentDiscussion}/>             
+                  <StyledBreadcrumb color="inherit" id = "history" label="History" onClick={ (e) => this.handleClickHistoryDiscussion("history") }/>
                 </Breadcrumbs>
                 {historyDates}
                     <Grid container spacing={3}>
                     	{discussionMessage}
                     </Grid>
 
-                    <form fullWidth>
-  						<Button
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                style = {buttonStyle}
-                                onClick={this.addDiscussMessage}
-                            >
-                            Class is over.
-                            </Button>
-					</form>
+                    {classOverButton}
                 </div>
 
         )
@@ -240,7 +242,7 @@ const containerStyle = {
 
 const buttonStyle = {
     marginTop : "20px",
-    width: "15%"
+    width: "20%"
 }
 
 const distractionStyle = {
@@ -268,7 +270,7 @@ const paperStyle = {
 
 const discussionStyle = {
 	textAlign : "left",
-	backgroundColor: "lightGrey",
+	backgroundColor: "#f5f5f5",
 	marginBottom: "5px",
 	marginLeft: "10px"
 }
@@ -277,5 +279,21 @@ const linkStyle = {
     textDecoration: 'none',
     color : "#000000"
 }
+
+const StyledBreadcrumb = withStyles(theme => ({
+  root: {
+    backgroundColor: theme.palette.grey[100],
+    height: theme.spacing(3),
+    color: theme.palette.grey[800],
+    fontWeight: theme.typography.fontWeightRegular,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.grey[300],
+    },
+    '&:active': {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+    },
+  },
+}))(Chip);
 
 export default InstructorDiscussion;
