@@ -28,13 +28,13 @@ class InstructorLimit extends Component {
         return (
             
             <div style = {pageStyle}>
-                <div style = {headerStyle}>
+                {/* <div style = {headerStyle}>
                     <Link to = "/instructorHomepage" style = {linkStyle}>
                         <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                     </Link>
-                </div>
+                </div> */}
                 <div>
-                    <div>Please select the student you want to limit their browser </div>
+                    <h2>Please select the student you want to limit their browser </h2>
                 </div>
                 <br></br>
                 <FormControl component="fieldset">

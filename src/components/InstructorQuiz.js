@@ -11,10 +11,9 @@ class InstructorQuiz extends Component {
             <div style={pageStyle}>
                 <div style={headerStyle}>
                     <Link to = "/instructorHomepage" style = {linkStyle}>
-                        <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
+                        <h3>Quiz For 18658</h3>
                     </Link>
                 </div>
-                <h3>Quiz For 18658</h3>
 
                 <div style = {{textAlign :"center", fontSize : "30px",margin:"0 auto", border: '3px solid blue', width : "600px", height : "150px"}}>
                     <div style = {{marginTop : "50px"}}><Link to="createquiz">Submit a new quiz question</Link></div>

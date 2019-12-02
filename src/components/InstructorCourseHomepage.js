@@ -25,6 +25,7 @@ import Button from '@material-ui/core/Button';
 import StudentQuiz from "../StudentQuiz";
 import InstructorDiscussion from "../InstructorDiscussion";
 import InstructorQuiz from "./InstructorQuiz";
+import InstructorLimit from "./InstructorLimit";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -101,6 +102,7 @@ export default function FullWidthTabs() {
                             <Tab label="Discuss" {...a11yProps(1)} />
                             <Tab label="Team" {...a11yProps(2)} />
                             <Tab label="Quiz" {...a11yProps(3)} />
+                            <Tab label="Lock" {...a11yProps(4)} />
                         </Tabs>
                     </AppBar>
                     <SwipeableViews
@@ -132,6 +134,9 @@ export default function FullWidthTabs() {
                         </TabPanel>
                         <TabPanel value={value} index={3} dir={theme.direction}>
                             <InstructorQuiz/>
+                        </TabPanel>
+                        <TabPanel value={value} index={4} dir={theme.direction}>
+                            <InstructorLimit/>
                         </TabPanel>
                     </SwipeableViews>
                 </div>
