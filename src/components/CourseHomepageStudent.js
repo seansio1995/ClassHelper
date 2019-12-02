@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import Button from '@material-ui/core/Button';
 import StudentQuiz from "../StudentQuiz";
+import StudentDiscussion from "../StudentDiscussion";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -116,8 +117,8 @@ export default function FullWidthTabs() {
                             </Paper>
                         </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
-                            Item Twotestets
-          </TabPanel>
+                            <StudentDiscussion/>
+                        </TabPanel>
                         <TabPanel value={value} index={2} dir={theme.direction}>
                             <h1 align="left">Team Formation for 18XXX: Introduction to Software Engineering</h1>
                             <h1 align="left">Your Team:</h1>
