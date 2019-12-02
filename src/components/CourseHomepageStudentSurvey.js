@@ -24,6 +24,13 @@ import SwipeableViews from 'react-swipeable-views';
 import Button from '@material-ui/core/Button';
 import StudentQuiz from "../StudentQuiz";
 import StudentDiscussion from "../StudentDiscussion";
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormLabel from '@material-ui/core/FormLabel';
+import NativeSelect from '@material-ui/core/NativeSelect';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -67,12 +74,16 @@ const useStyles = makeStyles(theme => ({
 export default function FullWidthTabs() {
     const classes = useStyles();
     const theme = useTheme();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(2);
 
     const [state, setState] = React.useState({
         size: '',
         name: 'hai',
-      });
+    });
+
+    const [value1, setValue1] = React.useState('weak');
+    const [value2, setValue2] = React.useState('weak');
+    const [value3, setValue3] = React.useState('male');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -84,86 +95,104 @@ export default function FullWidthTabs() {
 
     const handleChangeNum = name => event => {
         setState({
-          ...state,
-          [name]: event.target.value,
+            ...state,
+            [name]: event.target.value,
         });
-      };
+    };
+
+    const handleChangeRadio1 = event => {
+        setValue1(event.target.value);
+    };
+
+    const handleChangeRadio2 = event => {
+        setValue2(event.target.value);
+    };
+
+    const handleChangeRadio3 = event => {
+        setValue3(event.target.value);
+    };
+
+    const handleChangeSubmit = event => {
+        setValue(1);
+    }
 
     return (
         <div style={pageStyle}>
             <div style={headerStyle}>
-                <Link to = "/studentHomepage" style = {linkStyle}>
+                <Link to="/studentHomepage" style={linkStyle}>
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </Link>
             </div>
-            <Grid container spacing={3} justify="center"
-                alignItems="center">
-                <div className={classes.root}>
-                    <AppBar position="static" color="default">
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            indicatorColor="primary"
-                            textColor="primary"
-                            variant="fullWidth"
-                            aria-label="full width tabs example"
-                        >
-                            <Tab label="Home" {...a11yProps(0)} />
-                            <Tab label="Discuss" {...a11yProps(1)} />
-                            <Tab label="Team" {...a11yProps(2)} />
-                            <Tab label="Quiz" {...a11yProps(3)} />
-                        </Tabs>
-                    </AppBar>
-                    <SwipeableViews
-                        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                        index={value}
-                        onChangeIndex={handleChangeIndex}
-                    >
-                        <TabPanel value={value} index={0} dir={theme.direction}>
-                            <Paper className={classes.root} width={1000}>
-                                <h1 align="left">18XXX: Introduction to Software Engineering</h1>
-                                <h1 align="left">Instructor: Mary</h1>
-                                <h1 align="left">Teaching Assistants: Kevin, Stan</h1>
-                                <h1 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h1>
-                                <h1 align="left">Room: 1027, Building 23</h1>
-                                <h1 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h1>
-                                <h1 align="left">Plan: See this link demo.html/page2/section3</h1>
-                            </Paper>
-                        </TabPanel>
-                        <TabPanel value={value} index={1} dir={theme.direction}>
-                            <StudentDiscussion/>
-                        </TabPanel>
-                        <TabPanel value={value} index={2} dir={theme.direction}>
-                            <h1 align="left">Team Formation for 18XXX: Introduction to Software Engineering</h1>
-                            <h1 align="left">Team Size You Are Looking For? <FormControl className={classes.formControl}>
-        <InputLabel shrink htmlFor="age-native-label-placeholder">
-          Age
+            <div style={headerStyle}>
+                <h2>Team Survey</h2>
+            </div>
+            <div style={{ margin: "0 auto", width: "800px" }}>
+                <Grid container >
+                    <Grid sm={9}>
+                        <h3 align="left" sm={9}>Team Size You Are Looking For? </h3>
+                    </Grid>
+                    <Grid sm={3}>
+                        <FormControl align="right" className={classes.formControl}>
+                            <InputLabel shrink htmlFor="age-native-label-placeholder">
+                                Size
         </InputLabel>
-        <NativeSelect
-          value={state.size}
-          onChange={handleChangeNum('size')}
-          inputProps={{
-            name: 'size',
-            id: 'age-native-label-placeholder',
-          }}
-        >
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </NativeSelect>
-        <FormHelperText>Label + placeholder</FormHelperText>
-      </FormControl></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team10: Adam, Devin, Mark <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Team11: Dan, Kathy, Anthony <button variant="contained" color="primary">Chatting</button> <button size="large">Leave</button></h1>
-                            <h1 align="left">Do you want to join a new team? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button size="large"><Link to="/studentHomepage">New Team</Link></button></h1>
-                        </TabPanel>
-                        <TabPanel value={value} index={3} dir={theme.direction}>
-                            <StudentQuiz/>
-          </TabPanel>
-                    </SwipeableViews>
-                </div>
-            </Grid>
+                            <NativeSelect
+                                value={state.size}
+                                onChange={handleChangeNum('size')}
+                                inputProps={{
+                                    name: 'size',
+                                    id: 'age-native-label-placeholder',
+                                }}
+                            >
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
+                                <option value={5}>5</option>
+                            </NativeSelect>
+                        </FormControl>
+                    </Grid>
+                    <Grid sm={9}>
+                        <h3 align="left">Are You Willing to Lead a Team? </h3></Grid>
+                    <Grid sm={3}>
+                        <FormControl component="fieldset" >
+                            <RadioGroup aria-label="leadTeam" name="leadTeam" value={value1} onChange={handleChangeRadio1}>
+                                <FormControlLabel value="weak" control={<Radio />} label="Weak" />
+                                <FormControlLabel value="medium" control={<Radio />} label="Medium" />
+                                <FormControlLabel value="strong" control={<Radio />} label="Strong" />
+                            </RadioGroup>
+                        </FormControl></Grid>
+                    <Grid sm={9}>
+                        <h3 align="left">Are You an Outgoing Person?</h3> </Grid>
+                    <Grid sm={3}><FormControl component="fieldset" >
+
+                        <RadioGroup aria-label="person" name="person" value={value2} onChange={handleChangeRadio2}>
+                            <FormControlLabel value="weak" control={<Radio />} label="Weak" />
+                            <FormControlLabel value="medium" control={<Radio />} label="Medium" />
+                            <FormControlLabel value="strong" control={<Radio />} label="Strong" />
+                        </RadioGroup>
+                    </FormControl></Grid>
+                    <Grid sm={9}>
+                        <h3 align="left">Are You a Male or Female? </h3> </Grid>
+                    <Grid sm={3}>
+                        <FormControl component="fieldset" >
+                            <RadioGroup aria-label="gender" name="gender" value={value3} onChange={handleChangeRadio3}>
+                                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                <FormControlLabel value="female" control={<Radio />} label="Female" />
+                            </RadioGroup>
+                        </FormControl></Grid>
+                    <Grid sm={12}>
+                        <Button
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            style={buttonStyle}
+                            href="./courseHomepageStudent"
+                        >
+                            Submit
+                            </Button>
+                    </Grid>
+                </Grid>
+            </div>
         </div>
     );
 }
@@ -179,6 +208,11 @@ const headerStyle = {
 
 const linkStyle = {
     textDecoration: 'none',
-    color : "#000000"
+    color: "#000000"
+}
+
+const buttonStyle = {
+    marginTop: "10px",
+    width: "15%"
 }
 //export default CourseHomepageStudent;
