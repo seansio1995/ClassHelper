@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Login from "./components/Login";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import Limit from './components/Limit';
 import StudentHomepage from './components/StudentHomepage'
 import InstructorHomepage from './components/InstructorHomepage'
@@ -20,10 +20,11 @@ import InstructorQuiz from "./components/InstructorQuiz";
 import CreateQuiz from "./components/CreateQuiz";
 import RankBoard from "./components/RankBoard";
 import InstructorCourseHomepage from "./components/InstructorCourseHomepage";
+import ErrPage from "./components/ErrorPage";
 
 const routing = (
     <Router>
-        <div>
+        <Switch>
             <Route exact path="/" component={App} />
             <Route path = "/login" component={Login} />
             <Route path = "/studentHomepage" component = {StudentHomepage} />
@@ -45,7 +46,8 @@ const routing = (
             <Route path = "/instructorquiz" component = {InstructorQuiz}/>
             <Route path = "/createquiz" component = {CreateQuiz}/>
             <Route path = "/rankboard" component = {RankBoard}/>
-        </div>
+            <Route component={ErrPage} />
+        </Switch>
     </Router>
 )
 
