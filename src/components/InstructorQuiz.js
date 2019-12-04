@@ -32,7 +32,7 @@ class InstructorQuiz extends Component {
                     variant="contained"
                     color="primary"
                     style = {{marginTop : "20px"}}
-                > <Link to="InstructorCourseHomepage"> Back to HomePage </Link></Button>
+                > <Link to="InstructorCourseHomepage"> Back to Course Home</Link></Button>
             </div>
         )
     }
