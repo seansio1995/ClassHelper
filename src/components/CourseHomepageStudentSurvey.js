@@ -127,6 +127,11 @@ export default function FullWidthTabs() {
                 <h2>Team Survey</h2>
             </div>
             <div style={{ margin: "0 auto", width: "800px" }}>
+                <div style={goBackLinkStyle}>
+                <Link to="/studentHomepage"> 
+                Back to Dashboard and Profile
+                </Link>
+            </div>
                 <Grid container >
                     <Grid sm={9}>
                         <h3 align="left" sm={9}>Team Size You Are Looking For? </h3>
@@ -213,5 +218,10 @@ const linkStyle = {
 const buttonStyle = {
     marginTop: "10px",
     width: "15%"
+}
+
+const goBackLinkStyle = {
+    marginBottom: "20px",
+    textAlign: "left",
 }
 //export default CourseHomepageStudent;

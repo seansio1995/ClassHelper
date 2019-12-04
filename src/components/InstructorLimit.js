@@ -33,8 +33,8 @@ class InstructorLimit extends Component {
                         <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                     </Link>
                 </div> */}
-                <div>
-                    <h2>Please select the student you want to limit their browser </h2>
+                <div style = {headerStyle}>
+                    <h2>Select students to limit their browsers </h2>
                 </div>
                 <br></br>
                 <FormControl component="fieldset">
@@ -88,7 +88,7 @@ const pageStyle = {
 }
 
 const headerStyle = {
-    fontSize : "30px",
+    fontSize : "25px",
     textAlign : "center",
 }
 

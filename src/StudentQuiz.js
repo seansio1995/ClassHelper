@@ -113,7 +113,7 @@ const pageStyle = {
 }
 
 const headerStyle = {
-    fontSize : "30px",
+    fontSize : "25px",
     textAlign : "center"
 }
 

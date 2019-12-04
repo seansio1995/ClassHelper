@@ -145,7 +145,9 @@ class StudentDiscussion extends Component {
 
         return (
                 <div style={pageStyle}>
-                    <h1>Discussion</h1>
+                    <div style={headerStyle}>
+                    <h2>Discussion</h2>
+                    </div>
                     <Grid container spacing={3}>
                     	{discussionMessage}
                     </Grid>
@@ -174,7 +176,7 @@ const pageStyle = {
 }
 
 const headerStyle = {
-    fontSize : "30px",
+    fontSize : "25px",
     textAlign : "center"
 }
 

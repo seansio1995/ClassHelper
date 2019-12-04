@@ -90,7 +90,7 @@ export default function FullWidthTabsSurvey() {
             </div>
             <div style={goBackLinkStyle}>
                 <Link to="/studentHomepage"> 
-                Back to Homepage and Profile
+                Back to Dashboard and Profile
                 </Link>
             </div>
             <Grid container spacing={3} justify="center"
@@ -248,7 +248,7 @@ const pageStyle = {
         }
         
 const headerStyle = {
-                fontSize: "30px",
+                fontSize: "25px",
             textAlign: "center"
         }
         
@@ -260,6 +260,6 @@ const linkStyle = {
 const goBackLinkStyle = {
     marginBottom: "20px",
     textAlign: "left",
-    marginLeft: "9%"
+    marginLeft: "16%"
 }
         //export default CourseHomepageStudent;

@@ -216,7 +216,9 @@ class InstructorDiscussion extends Component {
 
         return (
                 <div style={pageStyle}>
-                <h1>Discussion</h1>
+                <div style={headerStyle}>
+                    <h2>Discussion</h2>
+                    </div>
                 <Breadcrumbs aria-label="breadcrumb" style={{"margin-bottom": "20px"}}>
                   <StyledBreadcrumb color="inherit" id = "current" label="Current Discussion" onClick={this.handleClickCurrentDiscussion}/>             
                   <StyledBreadcrumb color="inherit" id = "history" label="History" onClick={ (e) => this.handleClickHistoryDiscussion("history") }/>
@@ -253,7 +255,7 @@ const pageStyle = {
 }
 
 const headerStyle = {
-    fontSize : "30px",
+    fontSize : "25px",
     textAlign : "center"
 }
 
