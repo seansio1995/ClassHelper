@@ -76,12 +76,26 @@ class CreateQuiz extends Component {
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </div>
                 <h3>Create Quiz Tool</h3>
+                <Box>
+                    <h1>Type Question:</h1>
+
+                    <TextField
+                        multiline={true}
+                        style = {{width : "400px"}}
+                        rows={3}
+                        rowsMax={20}
+                        defaultValue="Question:
+                        Which of the following is included in the requirements pyramid?"
+                    />
+                </Box>
+
                 <Button
                     type="submit"
                     variant="contained"
                     color="primary"
                     onClick={this.createQuestion}
-                > Create Question </Button>
+                    style = {{marginTop : "20px"}}
+                > Add Answer </Button>
 
                 <div style={{marginLeft : "30%"}} >
                     {answerItems}
