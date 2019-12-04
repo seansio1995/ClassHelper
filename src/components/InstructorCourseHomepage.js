@@ -88,7 +88,7 @@ export default function FullWidthTabs() {
             </div>
             <div style={goBackLinkStyle}>
                 <Link to="/instructorHomepage"> 
-                Back to Homepage and Profile
+                Back to Dashboard and Profile
                 </Link>
             </div>
             <Grid container spacing={3} justify="center"
@@ -116,14 +116,17 @@ export default function FullWidthTabs() {
                         onChangeIndex={handleChangeIndex}
                     >
                         <TabPanel value={value} index={0} dir={theme.direction}>
+                        <div style={headerStyle}>
+                                <h2>Introduction</h2>
+                            </div>
                             <Paper className={classes.root} width={1000}>
-                                <h1 align="left">18XXX: Introduction to Software Engineering</h1>
-                                <h1 align="left">Instructor: Mary</h1>
-                                <h1 align="left">Teaching Assistants: Kevin, Stan</h1>
-                                <h1 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h1>
-                                <h1 align="left">Room: 1027, Building 23</h1>
-                                <h1 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h1>
-                                <h1 align="left">Plan: See this link demo.html/page2/section3</h1>
+                                <h2 align="left">18XXX: Introduction to Software Engineering</h2>
+                                <h2 align="left">Instructor: Mary</h2>
+                                <h2 align="left">Teaching Assistants: Kevin, Stan</h2>
+                                <h2 align="left">Time: 1:00PM - 3:00PM, Monday and Friday</h2>
+                                <h2 align="left">Room: 1027, Building 23</h2>
+                                <h2 align="left">Introduction: Software engineering sees its practitioners as individuals who follow well-defined engineering. </h2>
+                                <h2 align="left">Plan: See this link demo.html/page2/section3</h2>
                             </Paper>
                         </TabPanel>
                         <TabPanel value={value} index={1} dir={theme.direction}>
@@ -155,7 +158,7 @@ const pageStyle = {
 }
 
 const headerStyle = {
-    fontSize: "30px",
+    fontSize: "25px",
     textAlign: "center"
 }
 
@@ -167,5 +170,5 @@ const linkStyle = {
 const goBackLinkStyle = {
     marginBottom: "20px",
     textAlign: "left",
-    marginLeft: "9%"
+    marginLeft: "16%"
 }
