@@ -26,6 +26,8 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import {ThumbDown, ThumbUp} from '@material-ui/icons';
 import SwipeableViews from 'react-swipeable-views';
 import { emphasize, withStyles } from '@material-ui/core/styles';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
 
 class InstructorDiscussion extends Component {
@@ -106,7 +108,9 @@ class InstructorDiscussion extends Component {
                     }]
             }
         ],
-        dateSelected : "now"
+        dateSelected : "now",
+        alreadySaved : false,
+        openAlart : false
         }
     }
 
@@ -115,7 +119,7 @@ class InstructorDiscussion extends Component {
     }
 
     handleClose = () => {
-        this.setState({open : false});
+        this.setState({openAlart : false});
     }
 
     handleStay = () => {
@@ -142,13 +146,15 @@ class InstructorDiscussion extends Component {
     }
 
     saveHistory = (e) => {
+        if(this.state.alreadySaved) {
+            this.setState({openAlart: true});
+            return;
+        }
         let history = this.state.history;
         let newDayMessage = {"01/12/2019" : this.state.discuss};
         history.unshift(newDayMessage);
-        this.setState({history : history, discuss: []});
+        this.setState({history : history, discuss: [], alreadySaved: true});
     }
-
-
 
     render() {
 
@@ -221,6 +227,21 @@ class InstructorDiscussion extends Component {
                     </Grid>
 
                     {classOverButton}
+
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.openAlart}
+                    onClose={this.handleClose}
+                  >
+                    <div  style={modalStyle}>
+                      <h2 id="simple-modal-title">Couldn't save discussion history.</h2>
+                      <p id="simple-modal-description">
+                        You could only save discussion history one time a day.
+                      </p>
+                     
+                    </div>
+                  </Modal>
                 </div>
 
         )

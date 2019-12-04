@@ -88,6 +88,11 @@ export default function FullWidthTabsSurvey() {
                     <h1>Class Helper <i className="fas fa-graduation-cap" ></i></h1>
                 </Link>
             </div>
+            <div style={goBackLinkStyle}>
+                <Link to="/studentHomepage"> 
+                Back to Homepage and Profile
+                </Link>
+            </div>
             <Grid container spacing={3} justify="center"
                 alignItems="center">
                 <div className={classes.root}>
@@ -251,4 +256,10 @@ const linkStyle = {
                 textDecoration: 'none',
             color : "#000000"
         }
+
+const goBackLinkStyle = {
+    marginBottom: "20px",
+    textAlign: "left",
+    marginLeft: "9%"
+}
         //export default CourseHomepageStudent;
