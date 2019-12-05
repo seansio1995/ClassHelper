@@ -19,7 +19,10 @@ Languages: HTML, CSS, [React JSX](https://www.w3schools.com/react/react_jsx.asp)
 [React Material-UI](https://material-ui.com)
 
 ## Style Guide
-TODO: Add link to style guide.
+[Library we use : Material-UI](https://material-ui.com/
+)  
+[One-pager style guide overview](https://docs.google.com/presentation/d/1YaBJuu0ksGEKjpbduo1y9QoRgqan57ARS1yxzG4CCn8/edit#slide=id.p)
+ 
 
 ## Limitations
 1. For now we don't have backend services or database, and we don't support socket. 
